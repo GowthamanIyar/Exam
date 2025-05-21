@@ -15,7 +15,7 @@ User=[]
 Activity=[]
 
 import datetime as dt           #Time input for even every Transaction when were Done
-
+import builtins
 Customers={10000:{'No':00,'ID':10000,'name':'admin','age':21,'address':'address','NIC_No':'NIC_No','Contact_No':123456789}}
 Dic_Customer_Details=Customers[Entering_User_ID]                             #Dic customers --> import recoded data list 
 List_Customer_Details=list(Dic_Customer_Details.values())
@@ -286,10 +286,10 @@ def Admin_options():
     global Entering_User_ID
     while True:
         try:
-            print("====================================================================")
+            print("===================================================================")
             print("1.Create Account \t\t2.Deposit Money \n3.Withdraw Money \t\t4.Check Balance")
-            print("5.Transaction History \t\t6.Edit Customer Details \n7.Change Customer Password \t8.Change Admin Password")
-            print("9.Total Number of Customers \t\t10.Customer Account List \n11.customers_without_accounts \t\t12.Exit\n")
+            print("5.Transaction History \t\t6.Edit Customer Details\n7.Change Customer Password \t8.Change Admin Password")
+            print("9.Total Number of Customers \t10.Customer Account List \n11.customers_without_accounts \t12.Exit\n")
             Choice=int(input("Enter Your Choice: ",))
             if Choice==1:
                 Admin_Using_time()
@@ -340,8 +340,8 @@ def Admin_options():
                     User_Details=Users.get(key)
                     PASSWORD=User_Details.get('password_1','It is Not Defined') 
                     if PASSWORD=='It is Not Defined':
-                        Customers_Count+=1
-                print=("Total Customers: ",Customer_Count)
+                        Customer_Count+=1
+                print("Total Customers: ",Customer_Count)
             elif Choice==10:
                 Admin_Using_time()
                 try:
